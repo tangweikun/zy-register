@@ -1,4 +1,7 @@
-body{ background-color: #033074;background-image: url('../img/bg-1.png')}
+body{ background-color: #ffd220;}
+.body-register {
+  background-color: #033074;background-image: url('../img/bg-1.png');
+}
 .pf{ position:fixed; }
 .text-hide{ font: 0/0 a; text-shadow: none; border: 0; white-space: nowrap; text-indent: -100%; overflow: hidden; text-align: left;}
 .wrapper{ }
@@ -12,7 +15,7 @@ body{ background-color: #033074;background-image: url('../img/bg-1.png')}
 .playing li div.ssq{ background-position: -1.96rem 0; }
 .playing li div.dlt{ background-position: -2.94rem 0; }
 .playing li p{ font-size: .16rem; line-height: .22rem; text-align: center; }
-.playing li p strong{ font-size: .2rem; line-height: .24rem; color: #452d00; }
+.playing li p strong{ font-size: .2rem; line-height: .24rem; color: #ffffff; }
 .banner{ width: 6.4rem; height: 3.3rem; background: url(../img/bg_20180424.jpg) no-repeat; background-size: 100% auto; }
 .reg{ padding: .34rem .3rem .1rem; }
 .reg-in{ display: -webkit-box; }
