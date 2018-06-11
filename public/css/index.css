@@ -1,4 +1,4 @@
-body{ background-color: #ffd220;}
+body{ background-color: #033074;background-image: url('../img/bg-1.png')}
 .pf{ position:fixed; }
 .text-hide{ font: 0/0 a; text-shadow: none; border: 0; white-space: nowrap; text-indent: -100%; overflow: hidden; text-align: left;}
 .wrapper{ }
