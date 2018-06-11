@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>下载APP领取彩票</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="css/index.css?v=20170317">
+    <script src="/js/adaptive.js"></script>
+</head>
+<body>
+<div class="wrapper" id="root">
+    <section class="main">
+        <div class="flow">
+            <h2 class="text-hide">活动参与流程</h2>
+            <dl>
+                <dt class="text-hide b1">01先登录：</dt>
+                <dd>下载并打开客户端，选择“使用验证码登录”<br> 使用手机号 <span id="phone" class="text-red"></span> 通过验证码验证直接登录</dd>
+            </dl>
+            <dl>
+                <dt class="text-hide b2">02再投注：</dt>
+                <dd>立即参与活动，领取3元彩金，免费投注竞彩！</dd>
+            </dl>
+        </div>
+        <ul class="applist">
+            <li><a href="javascript:;" id="androidDownload" class="android"></a></li>
+            <li><a href="javascript:;" id="iosDownload" class="ios"></a></li>
+        </ul>
+        <ul class="explain">
+            <li>
+                <i class="icon1"></i>
+                <p><strong>一键投注</strong>app上直接买</p>
+            </li>
+            <li>
+                <i class="icon2"></i>
+                <p><strong>独家爆料</strong>章鱼独特分析，对赛事筛选</p>
+            </li>
+            <li>
+                <i class="icon3"></i>
+                <p><strong>章鱼指数</strong>模型计算，辅助投注</p>
+            </li>
+            <li>
+                <i class="icon4"></i>
+                <p><strong>彩虹盒子</strong>独家算法，盈利神器</p>
+            </li>
+            <li>
+                <i class="icon5"></i> 
+                <p><strong>比分直播</strong>最全最快比分</p>
+            </li>
+            <li>
+                <i class="icon6"></i>
+                <p><strong>开奖查询</strong>不用担心错过大奖</p>
+            </li>
+        </ul>
+    </section>
+    <footer class="footer">
+        <p class="about">您有任何问题我们第一时间帮您处理<br>售后投诉电话：400-7766-981<br>在线客服QQ：1692171477</p>
+    </footer>
+</div>
+<div id="layer"></div>
+<script type="text/javascript">
+    /** 智能机浏览器版本信息: */
+    var browser = {
+        versions: function() {
+            var u = navigator.userAgent,
+                app = navigator.appVersion,
+                ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                iosVersion;
+            if(ios){
+                var info = /[\S\s]*os ([\d_]+) like/gi.exec(u);
+                iosVersion = parseInt(info[1], 10);
+            }
+            return { //移动终端浏览器版本信息
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+                ios: ios, //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1, //是否iPad
+                iPod: u.indexOf('iPod') > -1, //是否iPod
+                webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                weixin: u.indexOf('MicroMessenger') > -1, //是否微信
+                qq: u.indexOf('QQ') > -1, //是否是qq
+                iosVersion: iosVersion,
+            };
+        }(),
+        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    };
+</script>
+<script>
+    //获取url参数
+    function getQueryString(key) {var url = location.search.replace(/^\?/, '').split('&');var paramsObj = {};for (var i = 0, iLen = url.length;i < iLen; i++) {var param = url[i].split('=');paramsObj[param[0]] = param[1];}if (key == "channel") {return paramsObj[key] || '0001';} else {return paramsObj[key] || "";}}
+</script>
+<script src="/js/zepto.min.js"></script>
+<script>
+$(function () {
+
+    var $androidDownload = $('#androidDownload');
+    var $iosDownload = $('#iosDownload');
+    var phone = decodeURIComponent(getQueryString('phone')),
+        product = decodeURIComponent(getQueryString('product')),
+        androidDownloadUrl = decodeURIComponent(getQueryString('androidDownloadUrl'));
+
+    androidDownloadUrl = androidDownloadUrl ? androidDownloadUrl : 'https://app-download.8win.com/android/zy_android_latest.apk';
+
+    if( phone ){
+        $('#root').addClass('newUser');
+        $('#phone').html(phone);
+    }
+
+
+    /*(function (){
+        if(!product) return false;
+        var codeparam = { command: '', data: {} };
+        codeparam.command = '600804';
+        codeparam.data.product = product;
+        var cP = 'message=' + JSON.stringify( codeparam );
+        $.ajax({
+            type: 'GET', url: ajaxUrl, data: cP, async:false,
+            beforeSend: function(){},
+            success: function(json){
+                if( json.code == 0 ){
+                    androidDownloadUrl = json.data.androidDownloadUrl;
+                }
+            }
+        });
+    })()*/
+    
+
+    $androidDownload.on('click',function(e) {
+        window.location.href = androidDownloadUrl;
+    });
+
+    $iosDownload.on('click',function(e) {
+        if(product && parseInt(product) == 6){
+            window.location.href = "https://itunes.apple.com/us/app/id1179968867?ls=1&mt=8";
+        }else{
+            window.location.href = "https://itunes.apple.com/us/app/id848995746?ls=1&mt=8";
+        }
+    });
+
+    //微信弹层
+    if (browser.versions.weixin) {
+        document.getElementsByTagName('body')[0].className = 'pf';
+        document.getElementById('layer').style.display = 'block';
+    }
+     //调起app
+    //var ua = navigator.userAgent;
+    if(getQueryString('u')==1) {
+        /*if(ua.match(/(iPhone|iPod|iPad);?/i)){
+            var ifr = document.createElement('iframe');
+            ifr.src = 'ZYLottery://';
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            setTimeout(function(){
+                document.body.removeChild(ifr);
+            }, 3000);
+        }else if(ua.match(/(android);?/i)){
+            window.location.href = 'intent://#Intent;scheme=ZYLottery;package=cn.win888.banying;end';
+        }*/
+        download({ openAppUrl: 'ZYLottery://' });
+    }
+
+    function download(options) {
+        var openAppUrl = options.openAppUrl || '',
+            isIos = browser.versions.ios,
+            isAndroid = browser.versions.android,
+            iosVersion = browser.versions.iosVersion;
+        if (openAppUrl) {
+            if (isIos && iosVersion && iosVersion >= 9){
+                window.location.href = openAppUrl;
+            } else {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = openAppUrl;
+                document.body.appendChild(iframe);
+            }
+            options.callback && setTimeout(function() {
+                options.callback();
+            }, 300);
+        }
+    }
+})
+</script>
+</body>
+</html>

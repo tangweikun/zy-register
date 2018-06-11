@@ -1,0 +1,57 @@
+@charset "UTF-8";
+body,ul,form{margin:0;padding:0;}dl,dd,h1,h2,h3,h4,h5,p,hr{margin:0;}
+body{font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;line-height:1.5;font-size:14px;color:#333;background-color:#f0f0f0;-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch;}h1,h2,h3,h4,h5{font-weight:400}table{border-collapse:collapse;border-spacing:0}img,hr{border:0}li{list-style:none}input,textarea{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}a{-webkit-touch-callout:none;text-decoration:none;}:focus{outline:0;}em,i{font-style:normal}b{font-weight:normal}
+a{color:#333}em{color:#D41E23}::-webkit-input-placeholder{color:#bbb}
+h1{font-size:.36rem}h2{font-size:.34rem}h3,h4,.f16{font-size:.32rem}h5,.f14{font-size:.28rem;}.f12{font-size:.24rem}.f10{font-size:.20rem}.f8{font-size:.16rem}
+.g6{color:#666}.gb{color:#bbb}.wh{color:#f8f8f8}.red{color:#D41E23}.tc{text-align:center}
+/* 文字颜色：由深至浅 #333 > #666 > #bbb > #f8f8f8 */
+.bc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-pack:center;-webkit-box-align:center;}
+.nowrap{max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.dn{display:none;}.l{float:left;}.r{float:right;}.pn{pointer-events:none;}
+/* 清除浮动,父元素class="cf" */
+.cf:after{content:'';display:table;clear:both;}
+
+/* 1像素的横线，父元素class="brd" backface 解决webkit动画后无法.5像素的bug*/
+.brd{position:relative;}
+.brd:before{content:'';width:100%;position:absolute;left:0;top:0;border-top:1px solid #bbb;-webkit-transform-origin:0 0;-webkit-transform:scaleY(.5);-webkit-backface-visibility:hidden;}
+.brd.dashed:before{border-top:1px dashed #bbb;}
+
+/* 等待转圈 */
+.loading{position:relative;}
+.loading:after{width:24px;height:24px;position:absolute;top:50%;left:50%;margin:-16px;border:2px solid #237FE5;border-radius:24px;
+-webkit-animation: gif 1s infinite linear;clip:rect(0 auto 16px 0);content:'';}
+@-webkit-keyframes gif{0% {-webkit-transform:rotate(0deg);}100% {-webkit-transform: rotate(360deg);}}
+
+/*弹窗*/
+.layermbox{position:relative;z-index:19891014}.layermmain,.laymshade{position:fixed;left:0;top:0;width:100%;height:100%}.layermbtn span,.layermchild{display:inline-block;position:relative}.laymshade{background-color:rgba(0,0,0,.5);pointer-events:auto}.layermmain{display:table;pointer-events:none}.layermmain .section{display:table-cell;vertical-align:middle;text-align:center}.layermchild{text-align:left;background-color:#f0f0f0;font-size:.28rem;border-radius:.06rem;box-shadow:0 0 .16rem rgba(0,0,0,.1);pointer-events:auto;-webkit-animation-fill-mode:both;-webkit-animation-duration:.18s;}.layermborder{border:.02rem solid #999}@-webkit-keyframes bounceIn{0%{opacity:0;-webkit-transform:scale(.5);}100%{opacity:1;-webkit-transform:scale(1);}}.layermanim{-webkit-animation-name:bounceIn}.layermbox0 .layermchild{max-width:90%;min-width:.35rem}.layermbox1 .layermchild{border:none;border-radius:0}.layermbox2 .layermchild{width:auto;max-width:5.2rem;min-width:.8rem;border:none;background:0 0;box-shadow:none;color:#f0f0f0}.layermchild h3{padding:0 .9rem 0 .2rem;height:1rem;line-height:1rem;font-size:.32rem;font-weight:400;border-radius:.06rem .06rem 0 0;border-bottom:.02rem solid #DADADA}.layermbtn span,.layermchild h3{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.layermcont{padding:.4rem .3rem;line-height:.44rem;text-align:center}.layermbox1 .layermcont{padding:0;text-align:left}.layermbox2 .layermcont{text-align:center;padding:0;line-height:0}.layermbox2 .layermcont i{width:.5rem;height:.5rem;margin-left:.16rem;display:inline-block;background-color:#f0f0f0;border-radius:100%;-webkit-animation:bouncedelay 1.4s infinite ease-in-out;-webkit-animation-fill-mode:both;}@-webkit-keyframes bouncedelay{0%,100%,80%{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1)}}.layermbox2 .layermcont i:first-child{margin-left:0;-webkit-animation-delay:-.32s;}.layermbox2 .layermcont i.laymloadtwo{-webkit-animation-delay:-.16s;}.layermbox2 .layermcont>div{line-height:.44rem;padding-top:.14rem;margin-bottom:.4rem;font-size:.28rem}.layermbtn{position:relative;height:.8rem;line-height:.8rem;font-size:0;text-align:center;border-top:.02rem solid #DADADA}.layermbtn span{width:50%;text-align:center;font-size:.28rem;color:#D41E23;cursor:pointer;border-radius:0 .06rem 0 0}.layermbtn span:first-child{color:#333;background-color:#f0f0f0;border-radius:0 0 0 .06rem}.layermbtn:before{content:'\20';position:absolute;width:.02rem;height:.78rem;left:50%;top:0;background-color:#DADADA}.layermend{position:absolute;right:.14rem;top:.02rem;width:.6rem;height:.6rem;border:0;font-weight:400;background:0 0;cursor:pointer;-webkit-appearance:none;font-size:.6rem}.layermend::before{content:'\2573';color:#bbb;font-size:.3rem;}
+
+/*iconfont*/
+@font-face{font-family:"font";src:url('font.woff');}
+.i-refresh:before,.i-arrow:before,.i-right:before,.i-funnel:before,.i-close:before{font-family:"font" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width:.2px;line-height:1;}
+.i-refresh:before { content: "\e604"; }
+.i-close:before { content: "\e605"; }
+.i-arrow:before { content: "\e603"; }
+.i-right:before { content: "\e601"; }
+.i-funnel:before { content: "\e602"; }
+
+@font-face {font-family: 'font-nav';src:url('font-navi.woff');}
+.i-match:before,.i-news:before,.i-promotion:before,.i-per:before{font-family:"font-nav"!important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width:.2px;line-height:1;}
+.i-promotion:before{content:"\e604";}
+.i-news:before{content:"\e601";}
+.i-match:before{content:"\e602";}
+.i-per:before{content:"\e603";}
+
+nav{width:6.4rem;height:.85rem;background:#f8f8f8;position:fixed;bottom:0;display:-webkit-box;border-top:1px solid #bbb;color:#666;}
+nav>a{width:100%;display:-webkit-box;-webkit-box-flex:1;-webkit-box-pack:center;-webkit-box-align:center;-webkit-box-orient:vertical;font-size:.2rem;color:#bbb;}
+nav>a:before{display:block;font-size:.4rem;}
+nav>a:active{background:#e5e5e5;}
+
+/* 公用图片集 */
+.i-share:before{background-image:url(../img/icons.png) no-repeat;-webkit-background-size:cover;content:'';}
+.i-pc:before{background-position:0 0}
+
+/* 公共页面样式 */
+body{max-width:6.4rem;margin:0 auto;}
+.toolbar{line-height:.9rem;background:#D41E23;font-size:.32rem;color:#f8f8f8;position:relative;}
+.br4{border-radius:.04rem;}
+.mt10{margin-top:.1rem;}.mt15{margin-top:.15rem;}.mt20{margin-top:.2rem;}
