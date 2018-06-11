@@ -16,15 +16,15 @@ body{ background-color: #ffd220;}
 .playing li div.dlt{ background-position: -2.94rem 0; }
 .playing li p{ font-size: .16rem; line-height: .22rem; text-align: center; }
 .playing li p strong{ font-size: .2rem; line-height: .24rem; color: #ffffff; }
-.banner{ width: 6.4rem; height: 3.3rem; background: url(../img/bg_20180424.jpg) no-repeat; background-size: 100% auto; }
+.banner{ width: 6.4rem; height: 3.3rem; background: url(../img/bg_20180424.jpg) no-repeat; background-size: 100% auto;margin-top: 0.3rem; }
 .reg{ padding: .34rem .3rem .1rem; }
 .reg-in{ display: -webkit-box; }
-.reg-field{ height: .42rem; background-color: #fff; border-radius: .1rem; padding: .13rem .08rem; display: -webkit-box; -webkit-box-flex: 1; }
+.reg-field{ height: .7rem; background-color:rgba(65,106,168,0.64); border-radius: 1rem; padding: 0 0; display: -webkit-box; -webkit-box-flex: 1; box-sizing: border-box;}
 .reg-field label{ display: -webkit-box; width: .78rem; border-right: 2px solid #947f56; -webkit-box-pack:center; -webkit-box-align:center;}
 .reg-field label i{ display: block; width: .32rem; height: .32rem;}
 .reg-field label i.icon-phone{ background-position: -3.92rem 0; }
 .reg-field label i.icon-code{ background-position: -4.24rem 0;}
-.reg-field input{ border: none; height: .42rem; padding: 0 .25rem; font-size: .24rem; line-height: .42rem; display: block; -webkit-box-flex: 1; }
+.reg-field input{ border: none; height: .7rem; padding: 0 .25rem; font-size: .24rem; line-height: .42rem; display: block; -webkit-box-flex: 1; background-color:rgba(65,106,168,0.64); border-radius: 1rem;}
 .reg-field input::-webkit-input-placeholder{ color: #ccc; }
 .reg-sub{ padding-left: .18rem;}
 .reg-sub a{ border-radius: .1rem; text-align: center; font-size: .24rem; line-height: .68rem; color: #fff; display: block; width: 1.36rem; height: .68rem; background-color: #48b2fc; }
